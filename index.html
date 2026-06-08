@@ -160,7 +160,8 @@
 
     .hero-sub {
       margin-top: 1.4rem;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 14px rgba(15,25,65,0.5);
       font-size: clamp(0.98rem, 1.8vw, 1.1rem);
       line-height: 1.75;
       max-width: 520px;
@@ -216,11 +217,10 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.9rem;
       font-weight: 700;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text);
+      text-shadow: none;
     }
-    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; letter-spacing: 0.02em; }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; letter-spacing: 0.02em; }
 
     /* ── SCROLL INDICATOR: mouse + dot ── */
     .scroll-indicator {
@@ -860,50 +860,57 @@
     Inteligencia Artificial · Soluciones para PYMEs
   </div>
 
-  <!-- Elemento visual estático IA -->
+  <!-- Cubo isométrico IA -->
   <div class="hero-visual" style="animation:fadeUp 0.7s ease both;margin-bottom:2rem;">
-    <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="hv-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(99,102,241,0.22)"/>
-          <stop offset="100%" stop-color="rgba(99,102,241,0)"/>
-        </radialGradient>
-        <linearGradient id="hv-hex" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
-          <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
+        <!-- Cara superior: azul-índigo luminoso -->
+        <linearGradient id="c-top" x1="60" y1="8" x2="60" y2="52" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#818cf8"/>
+          <stop offset="100%" stop-color="#4f46e5"/>
         </linearGradient>
-        <linearGradient id="hv-core" x1="32" y1="32" x2="76" y2="76" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#6366f1"/>
-          <stop offset="100%" stop-color="#7C3AED"/>
+        <!-- Cara derecha: teal oscuro -->
+        <linearGradient id="c-right" x1="90" y1="52" x2="60" y2="102" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#2dd4bf"/>
+          <stop offset="100%" stop-color="#0f766e"/>
         </linearGradient>
+        <!-- Cara izquierda: violeta oscuro (sombra) -->
+        <linearGradient id="c-left" x1="30" y1="52" x2="60" y2="102" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#7c3aed"/>
+          <stop offset="100%" stop-color="#4c1d95"/>
+        </linearGradient>
+        <!-- Brillo aristas -->
+        <filter id="c-glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
       </defs>
-      <!-- Halo exterior -->
-      <circle cx="54" cy="54" r="52" fill="url(#hv-glow)"/>
-      <!-- Hexágono exterior -->
-      <polygon points="54,4 98,29 98,79 54,104 10,79 10,29"
-        fill="url(#hv-hex)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
-      <!-- Hexágono interior -->
-      <polygon points="54,22 84,38.5 84,69.5 54,86 24,69.5 24,38.5"
-        fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-      <!-- Nodos en esquinas del hex interior -->
-      <circle cx="54" cy="22"   r="3" fill="#a5b4fc" opacity="0.85"/>
-      <circle cx="84" cy="38.5" r="3" fill="#6ee7b7" opacity="0.85"/>
-      <circle cx="84" cy="69.5" r="3" fill="#a5b4fc" opacity="0.85"/>
-      <circle cx="54" cy="86"   r="3" fill="#6ee7b7" opacity="0.85"/>
-      <circle cx="24" cy="69.5" r="3" fill="#c4b5fd" opacity="0.85"/>
-      <circle cx="24" cy="38.5" r="3" fill="#c4b5fd" opacity="0.85"/>
-      <!-- Círculo central -->
-      <circle cx="54" cy="54" r="20" fill="url(#hv-core)"/>
-      <circle cx="54" cy="54" r="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-      <!-- V central -->
-      <path d="M44 48 L54 63 L64 48" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <!-- Líneas nodo → centro -->
-      <line x1="54" y1="22"   x2="54" y2="34" stroke="rgba(165,180,252,0.35)" stroke-width="1"/>
-      <line x1="84" y1="38.5" x2="71" y2="46" stroke="rgba(110,231,183,0.35)" stroke-width="1"/>
-      <line x1="84" y1="69.5" x2="71" y2="62" stroke="rgba(165,180,252,0.35)" stroke-width="1"/>
-      <line x1="54" y1="86"   x2="54" y2="74" stroke="rgba(110,231,183,0.35)" stroke-width="1"/>
-      <line x1="24" y1="69.5" x2="37" y2="62" stroke="rgba(196,181,253,0.35)" stroke-width="1"/>
-      <line x1="24" y1="38.5" x2="37" y2="46" stroke="rgba(196,181,253,0.35)" stroke-width="1"/>
+
+      <!-- Halo suave detrás -->
+      <ellipse cx="60" cy="85" rx="42" ry="12" fill="rgba(99,102,241,0.18)"/>
+
+      <!-- Cara izquierda -->
+      <polygon points="60,52 60,100 18,76 18,28" fill="url(#c-left)"/>
+      <!-- Cara derecha -->
+      <polygon points="60,52 60,100 102,76 102,28" fill="url(#c-right)"/>
+      <!-- Cara superior -->
+      <polygon points="60,8 102,28 60,52 18,28" fill="url(#c-top)"/>
+
+      <!-- Aristas luminosas -->
+      <polyline points="18,28 60,8 102,28" stroke="rgba(255,255,255,0.55)" stroke-width="1.2" fill="none"/>
+      <line x1="60" y1="8"  x2="60"  y2="52" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+      <line x1="18" y1="28" x2="18"  y2="76" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+      <line x1="102" y1="28" x2="102" y2="76" stroke="rgba(255,255,255,0.2)"  stroke-width="0.8"/>
+      <polyline points="18,76 60,100 102,76"   stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none"/>
+
+      <!-- V en cara superior -->
+      <path d="M46 34 L60 48 L74 34" stroke="rgba(255,255,255,0.9)" stroke-width="2.8"
+            stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#c-glow)"/>
+
+      <!-- Punto de brillo esquina superior -->
+      <circle cx="60" cy="8" r="3.5" fill="white" opacity="0.9"/>
+      <circle cx="18" cy="28" r="2.5" fill="#a5b4fc" opacity="0.7"/>
+      <circle cx="102" cy="28" r="2.5" fill="#6ee7b7" opacity="0.7"/>
     </svg>
   </div>
 
@@ -1205,12 +1212,14 @@
 </footer>
 
 <script>
-// ── CANVAS: partículas ligeras ──
+// ── CANVAS: solo en escritorio ──
 const canvas = document.getElementById('canvas-bg');
+if (window.innerWidth < 768) {
+  canvas.style.display = 'none';
+} else {
 const ctx = canvas.getContext('2d', { alpha: true });
 let W, H;
-// Menos partículas en móvil
-const DOTS = window.innerWidth < 768 ? 28 : 48;
+const DOTS = 48;
 const LINK = 120;
 
 let resizeTimer;
@@ -1274,7 +1283,7 @@ function loop(t) {
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
-
+} // end desktop-only canvas
 
 // ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(entries => {
