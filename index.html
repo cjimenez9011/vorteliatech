@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VorteliaTech — IA para tu empresa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,8 +52,8 @@
       padding: 1rem 6vw;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: rgba(180,188,220,0.88);
-      border-bottom: 1px solid rgba(150,160,210,0.25);
+      background: rgba(22,36,82,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     /* LOGO */
@@ -66,19 +68,19 @@
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: var(--text);
+      color: #fff;
     }
-    .nav-logo-text span { color: var(--accent); }
+    .nav-logo-text span { color: #7dd9cf; }
 
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
       text-decoration: none;
-      color: #2e3460;
+      color: rgba(255,255,255,0.75);
       font-size: 0.88rem;
-      font-weight: 600;
+      font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: #fff; }
 
     .nav-cta {
       background: var(--accent) !important;
@@ -101,7 +103,7 @@
       justify-content: center;
       text-align: center;
       padding: 8rem 6vw 5rem;
-      background: linear-gradient(180deg, #8c96be 0%, #aab3d4 20%, #d0d8f0 45%, #f4f7ff 72%);
+      background: linear-gradient(180deg, #1e2d5e 0%, #2e3f7a 18%, #6a7ab5 42%, #c8d0ea 62%, #f4f7ff 78%);
       overflow: hidden;
     }
 
@@ -121,9 +123,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.45);
-      border: 1px solid rgba(91,95,239,0.3);
-      color: #3b3fa8;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.09em;
@@ -148,17 +150,17 @@
       letter-spacing: -0.04em;
       max-width: 800px;
       animation: fadeUp 0.85s 0.08s ease both;
-      color: var(--text);
+      color: #fff;
     }
     .hero-title .grad {
-      background: linear-gradient(130deg, var(--accent) 0%, var(--accent2) 55%, var(--accent3) 100%);
+      background: linear-gradient(130deg, #a5b4fc 0%, #6ee7b7 55%, #c4b5fd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-sub {
       margin-top: 1.4rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.65);
       font-size: clamp(0.98rem, 1.8vw, 1.1rem);
       line-height: 1.75;
       max-width: 520px;
@@ -188,18 +190,18 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 38px rgba(91,95,239,0.42); }
 
     .btn-ghost {
-      border: 1.5px solid var(--border);
-      color: var(--text);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff;
       padding: 0.82rem 2.1rem;
       border-radius: 10px;
       font-weight: 500;
       font-size: 0.93rem;
       text-decoration: none;
-      background: var(--surface);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, background 0.2s;
     }
-    .btn-ghost:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(91,95,239,0.14); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.18); }
 
     .hero-stats {
       display: flex;
@@ -218,7 +220,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; letter-spacing: 0.02em; }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; letter-spacing: 0.02em; }
 
     /* ── SCROLL INDICATOR: mouse + dot ── */
     .scroll-indicator {
@@ -690,18 +692,6 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.3; }
     }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.35; }
-      50%       { opacity: 0.9; }
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-    @keyframes spinReverse {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(-360deg); }
-    }
 
     /* ── HAMBURGER ── */
     .hamburger {
@@ -716,7 +706,7 @@
     .hamburger span {
       display: block;
       width: 22px; height: 2px;
-      background: var(--text);
+      background: #fff;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -870,55 +860,50 @@
     Inteligencia Artificial · Soluciones para PYMEs
   </div>
 
-  <!-- Elemento visual abstracto IA -->
-  <div class="hero-visual" style="animation:fadeUp 0.7s ease both;margin-bottom:2.2rem;">
-    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
-      <!-- Anillo exterior girando -->
-      <g style="transform-origin:55px 55px;animation:spinSlow 12s linear infinite">
-        <circle cx="55" cy="55" r="46" stroke="url(#ext-ring)" stroke-width="1" stroke-dasharray="6 5" opacity="0.4"/>
-        <!-- nodos en anillo exterior -->
-        <circle cx="55" cy="9"  r="3.5" fill="#a5b4fc"/>
-        <circle cx="101" cy="55" r="3.5" fill="#6ee7b7"/>
-        <circle cx="55" cy="101" r="3.5" fill="#c4b5fd"/>
-        <circle cx="9"  cy="55" r="3.5" fill="#a5b4fc"/>
-      </g>
-      <!-- Anillo medio girando inverso -->
-      <g style="transform-origin:55px 55px;animation:spinSlow 8s linear infinite reverse">
-        <circle cx="55" cy="55" r="30" stroke="url(#mid-ring)" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.55"/>
-        <circle cx="55" cy="25" r="4" fill="#818cf8"/>
-        <circle cx="85" cy="55" r="4" fill="#34d399"/>
-        <circle cx="55" cy="85" r="4" fill="#a78bfa"/>
-        <circle cx="25" cy="55" r="4" fill="#818cf8"/>
-      </g>
-      <!-- Centro pulsante -->
-      <circle cx="55" cy="55" r="14" fill="url(#center-fill)" opacity="0.9"/>
-      <circle cx="55" cy="55" r="14" stroke="url(#center-stroke)" stroke-width="2" style="animation:pulsering 2.2s ease-in-out infinite"/>
-      <circle cx="55" cy="55" r="22" stroke="url(#center-stroke)" stroke-width="0.8" opacity="0.3" style="animation:pulsering 2.2s ease-in-out infinite;animation-delay:0.4s"/>
-      <!-- V central -->
-      <path d="M46 49 L55 62 L64 49" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <!-- Líneas conectoras (estáticas) -->
-      <line x1="55" y1="9"  x2="55" y2="41" stroke="#a5b4fc" stroke-width="0.6" opacity="0.3"/>
-      <line x1="101" y1="55" x2="69" y2="55" stroke="#6ee7b7" stroke-width="0.6" opacity="0.3"/>
-      <line x1="55" y1="101" x2="55" y2="69" stroke="#c4b5fd" stroke-width="0.6" opacity="0.3"/>
-      <line x1="9" y1="55"  x2="41" y2="55" stroke="#a5b4fc" stroke-width="0.6" opacity="0.3"/>
+  <!-- Elemento visual estático IA -->
+  <div class="hero-visual" style="animation:fadeUp 0.7s ease both;margin-bottom:2rem;">
+    <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="ext-ring" x1="9" y1="55" x2="101" y2="55" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#818cf8"/>
-          <stop offset="100%" stop-color="#34d399"/>
+        <radialGradient id="hv-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(99,102,241,0.22)"/>
+          <stop offset="100%" stop-color="rgba(99,102,241,0)"/>
+        </radialGradient>
+        <linearGradient id="hv-hex" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
         </linearGradient>
-        <linearGradient id="mid-ring" x1="25" y1="55" x2="85" y2="55" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#6366f1"/>
-          <stop offset="100%" stop-color="#00C9B1"/>
-        </linearGradient>
-        <radialGradient id="center-fill" cx="50%" cy="50%" r="50%">
+        <linearGradient id="hv-core" x1="32" y1="32" x2="76" y2="76" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stop-color="#6366f1"/>
           <stop offset="100%" stop-color="#7C3AED"/>
-        </radialGradient>
-        <linearGradient id="center-stroke" x1="41" y1="55" x2="69" y2="55" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#818cf8"/>
-          <stop offset="100%" stop-color="#34d399"/>
         </linearGradient>
       </defs>
+      <!-- Halo exterior -->
+      <circle cx="54" cy="54" r="52" fill="url(#hv-glow)"/>
+      <!-- Hexágono exterior -->
+      <polygon points="54,4 98,29 98,79 54,104 10,79 10,29"
+        fill="url(#hv-hex)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <!-- Hexágono interior -->
+      <polygon points="54,22 84,38.5 84,69.5 54,86 24,69.5 24,38.5"
+        fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <!-- Nodos en esquinas del hex interior -->
+      <circle cx="54" cy="22"   r="3" fill="#a5b4fc" opacity="0.85"/>
+      <circle cx="84" cy="38.5" r="3" fill="#6ee7b7" opacity="0.85"/>
+      <circle cx="84" cy="69.5" r="3" fill="#a5b4fc" opacity="0.85"/>
+      <circle cx="54" cy="86"   r="3" fill="#6ee7b7" opacity="0.85"/>
+      <circle cx="24" cy="69.5" r="3" fill="#c4b5fd" opacity="0.85"/>
+      <circle cx="24" cy="38.5" r="3" fill="#c4b5fd" opacity="0.85"/>
+      <!-- Círculo central -->
+      <circle cx="54" cy="54" r="20" fill="url(#hv-core)"/>
+      <circle cx="54" cy="54" r="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+      <!-- V central -->
+      <path d="M44 48 L54 63 L64 48" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Líneas nodo → centro -->
+      <line x1="54" y1="22"   x2="54" y2="34" stroke="rgba(165,180,252,0.35)" stroke-width="1"/>
+      <line x1="84" y1="38.5" x2="71" y2="46" stroke="rgba(110,231,183,0.35)" stroke-width="1"/>
+      <line x1="84" y1="69.5" x2="71" y2="62" stroke="rgba(165,180,252,0.35)" stroke-width="1"/>
+      <line x1="54" y1="86"   x2="54" y2="74" stroke="rgba(110,231,183,0.35)" stroke-width="1"/>
+      <line x1="24" y1="69.5" x2="37" y2="62" stroke="rgba(196,181,253,0.35)" stroke-width="1"/>
+      <line x1="24" y1="38.5" x2="37" y2="46" stroke="rgba(196,181,253,0.35)" stroke-width="1"/>
     </svg>
   </div>
 
@@ -1220,30 +1205,32 @@
 </footer>
 
 <script>
-// ── CANVAS: soft floating dots ──
+// ── CANVAS: partículas ligeras ──
 const canvas = document.getElementById('canvas-bg');
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d', { alpha: true });
 let W, H;
-const DOTS = 70;
+// Menos partículas en móvil
+const DOTS = window.innerWidth < 768 ? 28 : 48;
+const LINK = 120;
 
+let resizeTimer;
 function resize() {
   W = canvas.width  = window.innerWidth;
   H = canvas.height = window.innerHeight;
 }
 resize();
-window.addEventListener('resize', resize);
+window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 200); });
 
+const palette = ['91,95,239','0,201,177','124,58,237'];
 class Dot {
   constructor() { this.reset(true); }
   reset(init) {
     this.x  = Math.random() * W;
     this.y  = init ? Math.random() * H : H + 8;
-    this.vx = (Math.random() - 0.5) * 0.3;
-    this.vy = -(Math.random() * 0.35 + 0.1);
-    this.r  = Math.random() * 2.2 + 0.8;
-    this.a  = Math.random() * 0.28 + 0.06;
-    // fresh colors: indigo, teal, violet
-    const palette = ['91,95,239', '0,201,177', '124,58,237', '99,102,241'];
+    this.vx = (Math.random() - 0.5) * 0.25;
+    this.vy = -(Math.random() * 0.3 + 0.08);
+    this.r  = Math.random() * 1.8 + 0.6;
+    this.a  = Math.random() * 0.22 + 0.05;
     this.col = palette[Math.floor(Math.random() * palette.length)];
   }
   update() {
@@ -1261,32 +1248,32 @@ class Dot {
 }
 
 const dots = Array.from({ length: DOTS }, () => new Dot());
-const LINK = 130;
 
-function drawLinks() {
+let lastT = 0;
+function loop(t) {
+  if (t - lastT < 24) { requestAnimationFrame(loop); return; } // ~40fps max
+  lastT = t;
+  ctx.clearRect(0, 0, W, H);
   for (let i = 0; i < dots.length; i++) {
+    dots[i].update(); dots[i].draw();
     for (let j = i + 1; j < dots.length; j++) {
       const dx = dots[i].x - dots[j].x;
       const dy = dots[i].y - dots[j].y;
-      const d  = Math.hypot(dx, dy);
-      if (d < LINK) {
+      const d2 = dx*dx + dy*dy;
+      if (d2 < LINK * LINK) {
+        const a = (1 - Math.sqrt(d2) / LINK) * 0.08;
         ctx.beginPath();
         ctx.moveTo(dots[i].x, dots[i].y);
         ctx.lineTo(dots[j].x, dots[j].y);
-        ctx.strokeStyle = `rgba(91,95,239,${(1 - d / LINK) * 0.1})`;
-        ctx.lineWidth = 0.6;
+        ctx.strokeStyle = `rgba(91,95,239,${a})`;
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       }
     }
   }
-}
-
-(function loop() {
-  ctx.clearRect(0, 0, W, H);
-  dots.forEach(d => { d.update(); d.draw(); });
-  drawLinks();
   requestAnimationFrame(loop);
-})();
+}
+requestAnimationFrame(loop);
 
 
 // ── SCROLL REVEAL ──
