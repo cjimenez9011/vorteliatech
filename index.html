@@ -30,8 +30,15 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      overflow-x: clip;
+      overflow-x: hidden;
+      position: relative;
       -webkit-overflow-scrolling: touch;
+    }
+
+    /* Contenedor que evita que los blobs desborden */
+    #page-wrap {
+      overflow: hidden;
+      position: relative;
     }
 
     canvas#canvas-bg {
@@ -793,38 +800,12 @@
   </style>
 </head>
 <body>
-
+<div id="page-wrap">
 <canvas id="canvas-bg"></canvas>
 
 <!-- ── NAV ── -->
 <nav>
   <a href="#" class="nav-logo">
-    <!-- LOGO SVG -->
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="18" cy="18" r="17" fill="url(#logo-bg)" />
-      <!-- Vortex ring outer -->
-      <ellipse cx="18" cy="18" rx="13" ry="5.2" stroke="url(#ring1)" stroke-width="1.4" fill="none" transform="rotate(-30 18 18)" opacity="0.7"/>
-      <!-- Vortex ring inner -->
-      <ellipse cx="18" cy="18" rx="9" ry="3.5" stroke="url(#ring2)" stroke-width="1.2" fill="none" transform="rotate(20 18 18)" opacity="0.9"/>
-      <!-- V shape -->
-      <path d="M11 12 L18 22 L25 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <!-- Center dot -->
-      <circle cx="18" cy="22" r="1.8" fill="white" opacity="0.9"/>
-      <defs>
-        <linearGradient id="logo-bg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#5B5FEF"/>
-          <stop offset="100%" stop-color="#7C3AED"/>
-        </linearGradient>
-        <linearGradient id="ring1" x1="5" y1="18" x2="31" y2="18" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#a5f3fc"/>
-          <stop offset="100%" stop-color="#00C9B1"/>
-        </linearGradient>
-        <linearGradient id="ring2" x1="9" y1="18" x2="27" y2="18" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#c7d2fe"/>
-          <stop offset="100%" stop-color="#5B5FEF"/>
-        </linearGradient>
-      </defs>
-    </svg>
     <span class="nav-logo-text">Vortelia<span>Tech</span></span>
   </a>
 
@@ -1309,5 +1290,6 @@ document.querySelectorAll('.m-link').forEach(link => {
   });
 });
 </script>
+</div><!-- /page-wrap -->
 </body>
 </html>
